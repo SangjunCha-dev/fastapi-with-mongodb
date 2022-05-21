@@ -11,6 +11,9 @@ python -m venv vnev
 
 # 비동기 서버 실행
 > pip install uvicorn
+
+# orjson 더빠른 json 처리
+> pip install orjson
 ```
 
 # MongoDB 연결 URL변수 설정
@@ -21,5 +24,5 @@ export MONGODB_URL="mongodb+srv://<username>:<password>@<url>/<db>?retryWrites=t
 
 # fastapi 시작
 ```
-uvicorn app:app --reload
+uvicorn src.main:app --reload
 ```
