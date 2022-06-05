@@ -1,4 +1,17 @@
-# setup
+# FastAPI With MongoDB
+
+> FastAPI와 MongoDB를 사용한 간단한 RestAPI 서버 입니다.
+
+
+# Tech/Framework Used
+
+|명칭       |버전   |
+|---        |---    |
+|FastAPI    |0.78.0 |
+|MongoDB    |5.0.8  |
+
+
+# 라이브러리 설치
 
 ```bash
 python -m venv vnev
@@ -12,17 +25,32 @@ python -m venv vnev
 # 비동기 서버 실행
 > pip install uvicorn
 
-# orjson 더빠른 json 처리
+# 더빠른 json 처리
 > pip install orjson
 ```
 
-# MongoDB 연결 URL변수 설정
 
-```bash
-export MONGODB_URL="mongodb+srv://<username>:<password>@<url>/<db>?retryWrites=true&w=majority"
+# DB 설정
+
+- 설정 파일 : `src/config/settings.json`
+- MongoDB Local 접속시 변수 형식
+    ```bash
+    export MONGODB_URL="mongodb://localhost:27017"
+    ```
+- MongoDB Cloud 접속시 변수 형식
+    ```bash
+    export MONGODB_URL="mongodb+srv://<username>:<password>@<url>/<db>?retryWrites=true&w=majority"
+    ```
+
+
+# 실행
+
+## 1. FastAPI 서버 실행
+
+```
+> uvicorn src.main:app --reload
 ```
 
-# fastapi 시작
-```
-uvicorn src.main:app --reload
-```
+## 2. 접속
+
+웹브라우저에서 `http://localhost:8000/docs` 주소로 접속
